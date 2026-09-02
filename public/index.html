@@ -3,73 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RV/PA Coupling Calculator</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Web App</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f5f7fa; color: #52606d; }
+  </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>RV/PA Coupling Calculator</h1>
-      <p class="subtitle">Non-invasive estimate of right ventricular to pulmonary arterial coupling from the TAPSE/sPAP ratio.</p>
-    </header>
-
-    <form id="form" novalidate>
-      <div class="field">
-        <label for="tapse">TAPSE <span class="unit">mm</span></label>
-        <input id="tapse" name="tapse" type="number" inputmode="decimal" step="0.1" min="1" max="50" placeholder="e.g. 18" required>
-        <small>Tricuspid annular plane systolic excursion, M-mode in the apical four-chamber view.</small>
-      </div>
-      <div class="field">
-        <label for="spap">sPAP <span class="unit">mmHg</span></label>
-        <input id="spap" name="spap" type="number" inputmode="decimal" step="1" min="5" max="200" placeholder="e.g. 45" required>
-        <small>Systolic pulmonary artery pressure, estimated from the tricuspid regurgitation gradient plus right atrial pressure.</small>
-      </div>
-      <button type="submit">Calculate</button>
-      <p id="error" class="error" hidden></p>
-    </form>
-
-    <section id="result" class="result" hidden>
-      <div class="ratio">
-        <span class="label">TAPSE / sPAP</span>
-        <span id="ratio-value" class="value">0.00</span>
-        <span class="unit">mm/mmHg</span>
-      </div>
-      <div id="band" class="band"></div>
-      <div class="scale" aria-hidden="true">
-        <div class="seg high">&lt; 0.19<br>high risk</div>
-        <div class="seg mid">0.19 – 0.32<br>intermediate</div>
-        <div class="seg low">&gt; 0.32<br>low risk</div>
-        <div id="marker" class="marker"></div>
-      </div>
-      <h2>Interpretation</h2>
-      <p id="interpretation"></p>
-      <h2>What this means</h2>
-      <p id="explanation"></p>
-    </section>
-
-    <section class="about">
-      <h2>About RV/PA coupling</h2>
-      <p>
-        The right ventricle has to adapt its contractility to the load imposed by the pulmonary circulation.
-        As long as it can, the two are said to be <em>coupled</em>. When pulmonary pressure rises faster than the
-        ventricle can compensate, the RV dilates, its function falls, and the system becomes <em>uncoupled</em>.
-        Invasively, coupling is measured as the ratio of end-systolic elastance to arterial elastance (Ees/Ea)
-        from pressure–volume loops.
-      </p>
-      <p>
-        The TAPSE/sPAP ratio is a simple echocardiographic surrogate: TAPSE reflects longitudinal RV contraction,
-        and sPAP reflects afterload. A ratio around 0.31 mm/mmHg or lower has been shown to identify RV–PA
-        uncoupling against invasive Ees/Ea. The 2022 ESC/ERS pulmonary hypertension guidelines use the ratio for
-        risk stratification with three strata: above 0.32 (low risk), 0.19 to 0.32 (intermediate risk),
-        and below 0.19 (high risk).
-      </p>
-      <p class="disclaimer">
-        For educational use only. It does not replace clinical judgement, full echocardiographic assessment,
-        or right heart catheterisation. Estimated sPAP is unreliable with severe tricuspid regurgitation or a
-        poor Doppler envelope.
-      </p>
-    </section>
-  </main>
-  <script src="app.js"></script>
+  <p>Nothing here yet.</p>
 </body>
 </html>
