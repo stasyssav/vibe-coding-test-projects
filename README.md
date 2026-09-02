@@ -30,4 +30,7 @@ export DEPLOY_DIR=/
 python3 deploy.py
 ```
 
+Set `DEPLOY_REMOVE` to a comma-separated list of remote paths to delete
+recursively before uploading (FTPS only), for one-off cleanups.
+
 Credentials are read from the environment only and are never committed.

@@ -30,5 +30,4 @@ jobs:
           DEPLOY_PASS: ${{ secrets.FTP_PASS }}
           DEPLOY_PROTO: ftps
           DEPLOY_DIR: /
-          DEPLOY_REMOVE: eli
         run: python3 deploy.py
