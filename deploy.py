@@ -39,7 +39,14 @@ def deploy_ftps(host, port, user, password, remote_dir):
     ftp.login(user, password)
     ftp.prot_p()  # encrypt the data channel too
     if remote_dir not in ("", "/"):
-        ftp.cwd(remote_dir)
+        # Create the target directory (and any parents) if it does not exist.
+        for segment in remote_dir.strip("/").split("/"):
+            try:
+                ftp.cwd(segment)
+            except error_perm:
+                ftp.mkd(segment)
+                ftp.cwd(segment)
+                print(f"created remote directory {segment}")
     for local, rel in files_to_upload():
         parts = rel.split("/")
         for i in range(len(parts) - 1):
