@@ -1,6 +1,6 @@
 # Web App
 
-An empty starter page in `public/`, ready to be built out live.
+An empty HTML page in `public/`, ready to be built out live.
 It is deployed to the root of an FTP account
 whose home directory is the site's `/eli` folder. Deployment runs automatically in GitHub Actions on every push
 that touches `public/`, so the whole edit-and-deploy loop works from a browser.
