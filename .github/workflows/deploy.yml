@@ -29,5 +29,5 @@ jobs:
           DEPLOY_USER: ${{ secrets.FTP_USER }}
           DEPLOY_PASS: ${{ secrets.FTP_PASS }}
           DEPLOY_PROTO: ftps
-          DEPLOY_DIR: /eli
+          DEPLOY_DIR: /
         run: python3 deploy.py

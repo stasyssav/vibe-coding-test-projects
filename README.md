@@ -1,7 +1,7 @@
 # Hello World
 
-A minimal static web page in `public/`, deployed to the `/eli` folder of an
-FTP account. Deployment runs automatically in GitHub Actions on every push
+A minimal static web page in `public/`, deployed to the root of an FTP account
+whose home directory is the site's `/eli` folder. Deployment runs automatically in GitHub Actions on every push
 that touches `public/`, so the whole edit-and-deploy loop works from a browser.
 
 ## One-time setup: repository secrets
@@ -16,7 +16,7 @@ secret** and add:
 | `FTP_PASS` | the FTP password         |
 
 The workflow in `.github/workflows/deploy.yml` reads them and uploads over
-FTPS (port 21) into `/eli`. You can also start it by hand from the
+FTPS (port 21) into the account's root directory. You can also start it by hand from the
 **Actions** tab with "Run workflow".
 
 ## Deploying from your own machine
@@ -26,7 +26,7 @@ export DEPLOY_HOST=your.server.example
 export DEPLOY_USER=username
 export DEPLOY_PASS='password'
 export DEPLOY_PROTO=ftps      # or sftp, which needs: pip install paramiko
-export DEPLOY_DIR=/eli
+export DEPLOY_DIR=/
 python3 deploy.py
 ```
 
