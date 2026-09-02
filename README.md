@@ -1,6 +1,9 @@
-# Hello World
+# RV/PA Coupling Calculator
 
-A minimal static web page in `public/`, deployed to the root of an FTP account
+A static web app in `public/` that takes TAPSE (mm) and sPAP (mmHg), computes the
+TAPSE/sPAP ratio as a non-invasive estimate of right ventricular to pulmonary
+arterial coupling, and explains the result using the 2022 ESC/ERS risk strata.
+It is deployed to the root of an FTP account
 whose home directory is the site's `/eli` folder. Deployment runs automatically in GitHub Actions on every push
 that touches `public/`, so the whole edit-and-deploy loop works from a browser.
 
