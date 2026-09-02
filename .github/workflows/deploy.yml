@@ -1,0 +1,33 @@
+name: Deploy to FTP
+
+on:
+  push:
+    branches: [main, master, "claude/**"]
+    paths:
+      - "public/**"
+      - "deploy.py"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Upload public/ over FTPS
+        env:
+          DEPLOY_HOST: ${{ secrets.FTP_HOST }}
+          DEPLOY_USER: ${{ secrets.FTP_USER }}
+          DEPLOY_PASS: ${{ secrets.FTP_PASS }}
+          DEPLOY_PROTO: ftps
+          DEPLOY_DIR: /eli
+        run: python3 deploy.py

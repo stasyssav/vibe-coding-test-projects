@@ -8,7 +8,7 @@ Credentials are read from environment variables and never stored in the repo:
   DEPLOY_PASS    password
   DEPLOY_PROTO   "ftps" (default, port 21) or "sftp" (port 22)
   DEPLOY_PORT    override the default port
-  DEPLOY_DIR     remote directory to upload into (default: "/")
+  DEPLOY_DIR     remote directory to upload into (default: "/eli")
 
 Usage:  python3 deploy.py
 """
@@ -82,7 +82,7 @@ def main():
     host = env("DEPLOY_HOST", required=True)
     user = env("DEPLOY_USER", required=True)
     password = env("DEPLOY_PASS", required=True)
-    remote_dir = env("DEPLOY_DIR", "/")
+    remote_dir = env("DEPLOY_DIR", "/eli")
     default_port = 22 if proto == "sftp" else 21
     port = int(env("DEPLOY_PORT", str(default_port)))
 
